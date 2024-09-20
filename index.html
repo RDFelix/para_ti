@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgb(217, 217, 217);
+    }
+
+    .centro{
+        background-color: rgb(172, 113, 26);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0px 0px 50px rgb(99, 66, 15);
+    
+    }
+
+    .tallo{
+        background-color: rgb(10, 145, 10);
+        width: 20px;
+        height: 300px;
+        transform: translateY(150px);
+        
+    }
+
+    @keyframes aparecer{
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+</style>
+<body>
+    <main style="display: flex; justify-content: center; align-items: center;">
+        <div class="tallo"></div>
+        <article id="contenedor" style="position: absolute; display: flex; justify-content: center; align-items: center;">
+        </article>
+        <div class="centro"></div>
+    </main>
+</body>
+<script>
+    x = 50;
+    y = 0;
+
+    w = 40;
+    h = 70;
+
+    for (let i = 0; i < 360; i += 30) {
+        document.getElementById("contenedor").innerHTML += `
+            <div style='
+                rotate: ${i+15}deg;
+                transform: translate(${y}px, ${x}px);
+                animation: aparecer .5s ease-in-out;
+                background-color: rgb(236, 227, 43);
+                border-radius: 50%;
+                width: ${w+10}px;
+                height: ${h+150}px;
+                box-shadow: 0px 0px 5px rgb(186, 186, 18);
+                position: absolute;
+            '></div>
+        `;
+    }
+
+    for (let i = 0; i < 360; i += 40) {
+        document.getElementById("contenedor").innerHTML += `
+            <div style='
+                rotate: ${i}deg;
+                transform: translate(${y}px, ${x}px);
+                animation: aparecer .5s ease-in-out;
+                background-color: rgb(236, 227, 43);
+                border-radius: 50%;
+                width: ${w+10}px;
+                height: ${h+90}px;
+                box-shadow: 0px 0px 50px rgb(186, 186, 18);
+                position: absolute;
+            '></div>
+        `;
+    }
+
+    for (let i = 0; i < 360; i += 40) {
+        document.getElementById("contenedor").innerHTML += `
+            <div style='
+                rotate: ${i+15}deg;
+                transform: translate(${y}px, ${x}px);
+                animation: aparecer .5s ease-in-out;
+                background-color: rgb(236, 227, 43);
+                border-radius: 50%;
+                width: ${w}px;
+                height: ${h+20}px;
+                box-shadow: 0px 0px 50px rgb(186, 186, 18);
+                position: absolute;
+            '></div>
+        `;
+    }
+
+</script>
+</html>
